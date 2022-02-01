@@ -1,0 +1,21 @@
+name: install softwares
+on: 
+  push:
+    branches:
+      - main
+      # - 'feature/feat[ABC]'
+      # - 'feature/feat[ABC]+' #featAC
+      # - 'feature/feat?' #feat, featA, featB, !featAC
+      - 'feature/feat[A-Z]'
+jobs:
+  run-shell-command: 
+    runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - uses: hashicorp/setup-terraform@v1
+        - name: on-line script
+          run: echo "Hello World"
+        - name: multiline script
+          run: |
+            terraform -v
+            node -v
