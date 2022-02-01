@@ -7,6 +7,7 @@ jobs:
   run-shell-command: 
     runs-on: ubuntu-latest
     steps:
+        - run: env
         - uses: actions/checkout@v2
         #- uses: hashicorp/setup-terraform@v1
         #- uses: actions/setup-node@v2
